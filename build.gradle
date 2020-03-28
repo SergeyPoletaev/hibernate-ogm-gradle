@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id "io.spring.dependency-management" version "1.0.0.RC2"
+}
+
+group 'test1'
+version '1.0-SNAPSHOT'
+
+sourceSets.main.output.resourcesDir = sourceSets.test.java.outputDir
+sourceSets.test.output.resourcesDir = sourceSets.test.java.outputDir
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.hibernate.ogm', name: 'hibernate-ogm-mongodb'
+    compile group: 'org.jboss.jbossts', name: 'jbossjta'
+    compile group: 'org.hibernate', name: 'hibernate-search-orm'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.easytesting', name: 'fest-assert', version: '1.4'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom('org.hibernate.ogm:hibernate-ogm-bom:4.1.1.Final')
+    }
+}
+
+//task wrapper(type: Wrapper) {
+//    gradleVersion = "1.12"
+//}
