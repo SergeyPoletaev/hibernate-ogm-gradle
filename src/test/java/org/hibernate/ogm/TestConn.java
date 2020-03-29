@@ -1,9 +1,9 @@
-package org.hibernate.ogm.demos.ogm101.part2;
+package org.hibernate.ogm;
 
 import mainpack.Hike3;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +13,7 @@ import java.util.List;
 public class TestConn {
   private static EntityManagerFactory entityManagerFactory;
 
-  @BeforeClass
+  @BeforeMethod
   public static void setUpEntityManagerFactory() {
     entityManagerFactory = Persistence.createEntityManagerFactory( "hikePu" );
     EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -23,7 +23,7 @@ public class TestConn {
     entityManager.close();
   }
 
-  @AfterClass
+  @AfterMethod
   public static void closeEntityManagerFactory() {
     entityManagerFactory.close();
   }

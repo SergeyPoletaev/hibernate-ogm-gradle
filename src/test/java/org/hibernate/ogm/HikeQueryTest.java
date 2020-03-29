@@ -1,10 +1,6 @@
+
 /*
- * Hibernate OGM, Domain model persistence for NoSQL datastores
- *
- * License: GNU Lesser General Public License (LGPL), version 2.1 or later
- * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
- */
-package org.hibernate.ogm.demos.ogm101.part2;
+package org.hibernate.ogm;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -30,11 +26,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * Shows how to persist and retrieve entities to/from NoSQL stores using Hibernate OGM.
- *
- * @author Gunnar Morling
- */
+
 public class HikeQueryTest {
 
 	private static EntityManagerFactory entityManagerFactory;
@@ -154,3 +146,5 @@ public class HikeQueryTest {
 		entityManager.close();
 	}
 }
+
+ */
